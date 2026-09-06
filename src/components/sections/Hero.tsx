@@ -2,7 +2,8 @@
 
 import { useEffect, useRef } from "react";
 import { ActionLink } from "@/components/ui/ActionLink";
-import { ArrowDown, ArrowRight, Download } from "@/components/ui/Icons";
+import { ArrowDown, ArrowRight } from "@/components/ui/Icons";
+import { ResumeMenu } from "@/components/ui/ResumeMenu";
 import { SITE } from "@/lib/site";
 import { sectionPath } from "@/lib/routes";
 import type { Content, Lang } from "@/content/types";
@@ -175,15 +176,12 @@ export function Hero({ lang, content }: { lang: Lang; content: Content }) {
                                   {hero.primaryCta}
                                   <ArrowRight className="text-base transition-transform duration-300 group-hover:translate-x-1" />
                               </ActionLink>
-                              <ActionLink
-                                  href={SITE.resume}
-                                  variant="ghost"
-                                  download
-                                  aria-label={nav.resumeAria}
-                              >
-                                  {hero.secondaryCta}
-                                  <Download className="text-base transition-transform duration-300 group-hover:translate-y-0.5" />
-                              </ActionLink>
+                              <ResumeMenu
+                                  lang={lang}
+                                  nav={nav}
+                                  variant="hero"
+                                  label={hero.secondaryCta}
+                              />
                           </div>
 
                           <ul className="flex flex-wrap items-center gap-x-3 gap-y-2 font-mono text-[0.6875rem] uppercase tracking-[0.14em] text-dim">

@@ -86,6 +86,7 @@ export interface Content {
     items: NavItem[];
     resume: string;
     resumeAria: string;
+    resumeMenuAria: string;
     openMenu: string;
     closeMenu: string;
     langLabel: string;

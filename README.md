@@ -50,8 +50,10 @@ Adding a project is a single object in **both** `work.projects` arrays; the rout
 the build stops with a message naming both lists (`src/content/index.ts`) rather
 than failing later with a 404 during prerendering.
 
-Replacing the résumé PDF: drop the new file at `public/Eng_Anas_Chaabane.pdf`,
-or change `SITE.resume` in `src/lib/site.ts`.
+Replacing a résumé PDF: drop the new file at `public/Anas_Chaabane_EN.pdf` or
+`public/Anas_Chaabane_FR.pdf`, or change `SITE.resume` in `src/lib/site.ts`.
+Both are always offered — the résumé button is a dropdown that lists the current
+site language first.
 
 ## Environment
 

@@ -1,3 +1,5 @@
+import type { Lang } from "@/content/types";
+
 export const SITE = {
   url: "https://chaabaneanas.github.io",
   name: "Anas Chaabane",
@@ -12,7 +14,7 @@ export const SITE = {
   linkedin: "https://www.linkedin.com/in/chaabaneanas/",
   github: "https://github.com/ChaabaneAnas",
   githubUser: process.env.NEXT_PUBLIC_GITHUB_USER ?? "ChaabaneAnas",
-  resume: "/Eng_Anas_Chaabane.pdf",
+  resume: { en: "/Anas_Chaabane_EN.pdf", fr: "/Anas_Chaabane_FR.pdf" },
 
   /**
    * Hero portrait. Leave null and the hero renders exactly as it does without
@@ -22,6 +24,16 @@ export const SITE = {
   portrait: { src: "/portrait.webp", width: 640, height: 640 },
   since: 2022,
 } as const;
+
+/**
+ * Résumé language names, written in their own language, so they read the same
+ * on both trees. Language-neutral like `src/content/links.ts`, which is why
+ * they sit here rather than in the dictionaries.
+ */
+export const RESUME_LANGUAGE_LABEL: Record<Lang, string> = {
+  en: "English",
+  fr: "Français",
+};
 
 /** Public by design — Web3Forms keys are meant to live in the client bundle. */
 export const WEB3FORMS_KEY = process.env.NEXT_PUBLIC_WEB3FORMS_KEY ?? "";

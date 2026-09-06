@@ -3,7 +3,8 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
-import { Close, Download, Globe, Menu } from "@/components/ui/Icons";
+import { Close, Globe, Menu } from "@/components/ui/Icons";
+import { ResumeMenu } from "@/components/ui/ResumeMenu";
 import { cn } from "@/lib/cn";
 import { SITE } from "@/lib/site";
 import { homePath, otherLang, sectionPath } from "@/lib/routes";
@@ -149,15 +150,12 @@ export function Header({ lang, nav }: HeaderProps) {
             <span className="sr-only">— {nav.switchTo}</span>
           </Link>
 
-          <a
-            href={SITE.resume}
-            download=""
-            aria-label={nav.resumeAria}
-            className="hidden items-center gap-2 rounded-full border border-line bg-surface px-3.5 py-1.5 text-sm text-text transition-colors hover:border-accent/45 hover:text-accent sm:inline-flex"
-          >
-            <Download className="text-sm" />
-            {nav.resume}
-          </a>
+          <ResumeMenu
+            lang={lang}
+            nav={nav}
+            variant="header"
+            className="hidden sm:block"
+          />
 
           <button
             type="button"
@@ -196,15 +194,12 @@ export function Header({ lang, nav }: HeaderProps) {
                 {item.label}
               </Link>
             ))}
-            <a
-              href={SITE.resume}
-              download=""
+            <ResumeMenu
+              lang={lang}
+              nav={nav}
+              variant="sheet"
               tabIndex={open ? undefined : -1}
-              className="mt-4 inline-flex items-center justify-center gap-2 rounded-full bg-accent px-5 py-3 text-sm font-medium text-[#04212a]"
-            >
-              <Download />
-              {nav.resume}
-            </a>
+            />
           </nav>
         </div>
       </div>

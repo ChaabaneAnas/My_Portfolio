@@ -57,6 +57,14 @@ export function Download(props: IconProps) {
   );
 }
 
+export function ChevronDown(props: IconProps) {
+  return (
+    <Svg {...props}>
+      <path {...stroke} d="m6 9.5 6 6 6-6" />
+    </Svg>
+  );
+}
+
 export function Mail(props: IconProps) {
   return (
     <Svg {...props}>
